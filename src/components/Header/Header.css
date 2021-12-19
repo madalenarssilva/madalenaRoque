@@ -1,0 +1,94 @@
+@import "../../App.css";
+
+.header {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.name {
+  display: flex;
+  flex-direction: row;
+  margin-left: 2rem;
+}
+
+.navbar {
+  font-family: Bely Regular;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 2rem;
+}
+
+.navbar > p {
+  margin-left: 2rem;
+}
+
+.fist-name {
+  font-size: 21px;
+  font-family: Bely BoldV;
+}
+
+.last-name {
+  font-family: Bely Regular;
+}
+
+.hamburguer {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 26px;
+  margin-right: 1rem;
+  height: 1.5em;
+  width: 1.5em;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 480px) {
+  .header {
+    flex-direction: column;
+  }
+  .name {
+    padding: 0;
+  }
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    margin: 0;
+  }
+  .navbar > p:nth-child(1) {
+    border-top: 2px solid white;
+  }
+  .navbar > p:nth-child(3) {
+    border-bottom: 2px solid white;
+  }
+  .navbar > p {
+    width: 100%;
+    margin: 0;
+    border-top: 2px solid white;
+    text-align: center;
+    padding: 0.3rem;
+    font-size: 16px;
+  }
+  .hamburguer {
+    display: block;
+  }
+}
+
+/* Big Desktop */
+@media only screen and (min-width: 1281px) {
+  .navbar > p {
+    font-size: 30px;
+  }
+
+  .fist-name {
+    font-size: 32px;
+  }
+
+  .last-name {
+    font-size: 30px;
+  }
+}
