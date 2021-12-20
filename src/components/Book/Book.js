@@ -1,131 +1,119 @@
-import React from "react";
+import React, { useMemo } from "react";
 import "./Book.css";
 import styled from "styled-components";
 import HTMLFlipBook from "react-pageflip";
+import { convertRemToPixels, DESKTOP_PAGE } from "../../utils";
 
 const Book = () => {
+  const isMobile = useMemo(
+    () => window.innerWidth <= DESKTOP_PAGE.width * 2,
+    []
+  );
+
   return (
     <>
       <div className="book">
-        <HTMLFlipBook width={500} height={600} showCover={true}>
+        <HTMLFlipBook
+          className={isMobile && "flip-book"}
+          width={
+            isMobile
+              ? window.innerWidth - convertRemToPixels(2)
+              : DESKTOP_PAGE.width
+          }
+          height={isMobile ? window.innerHeight * 0.9 : DESKTOP_PAGE.height}
+          usePortrait={isMobile}
+          showCover={!isMobile}
+        >
           {/* CAPA*/}
           <div className="demoPage">
-            <PageBook className="page-book">
-              <img className="about" src="/about.svg" />
-            </PageBook>
+            <img className="about" src="/about.svg" />
           </div>
           {/* PAGINA EM BRANCO*/}
-          <div className="demoPage">
-            <PageBook className="page-book"></PageBook>
-          </div>
+          {!isMobile ? <div className="demoPage" /> : <></>}
           {/* PRIMEIRA PAGINA*/}
           <div className="demoPage">
-            <PageBook className="page-book">
-              <p>My name is Madalena Roque Silva.</p>
-              <p>I am a Software Engineer from University of Coimbra.</p>
-            </PageBook>
+            <p>My name is Madalena Roque Silva.</p>
+            <p>I am a Software Engineer from University of Coimbra.</p>
           </div>
           {/* PAGINA EM BRANCO*/}
-          <div className="demoPage">
-            <PageBook className="page-book"></PageBook>
-          </div>
+          {!isMobile ? <div className="demoPage" /> : <></>}
           {/* SEGUNDA PAGINA*/}
           <div className="demoPage">
-            <PageBook className="page-book">
-              <p>
-                I love coding, building new interactive websites and platforms.{" "}
-              </p>
-              <img
-                src="/pc.svg"
-                style={{
-                  width: "30vw",
-                  marginTop: "3rem",
-                }}
-              />
-            </PageBook>
+            <p>
+              I love coding, building new interactive websites and platforms.{" "}
+            </p>
+            <img
+              src="/pc.svg"
+              style={{
+                width: "70%",
+                marginTop: "10%",
+              }}
+            />
           </div>
           {/* PAGINA EM BRANCO*/}
-          <div className="demoPage">
-            <PageBook className="page-book"></PageBook>
-          </div>
+          {!isMobile ? <div className="demoPage" /> : <></>}
           {/* TERCEIRA PAGINA*/}
           <div className="demoPage">
-            <PageBook className="page-book">
-              <p>In my free time I like to read a lot of books. </p>
-              <img
-                src="/livro2.svg"
-                style={{
-                  width: "25vw",
-                  marginLeft: "5rem",
-                  marginTop: "-1rem",
-                }}
-              />
-            </PageBook>
+            <p>In my free time I like to read a lot of books. </p>
+            <img
+              src="/livro2.svg"
+              style={{
+                width: "80%",
+                marginLeft: "10%",
+                marginTop: "-2.8%",
+              }}
+            />
           </div>
           {/* PAGINA EM BRANCO*/}
-          <div className="demoPage">
-            <PageBook className="page-book"></PageBook>
-          </div>
+          {!isMobile ? <div className="demoPage" /> : <></>}
           {/* QUARTA PAGINA*/}
           <div className="demoPage">
-            <PageBook className="page-book">
-              <p>
-                Listen to different music genres, from classical music to the
-                last Pop hits.
-              </p>
-              <img
-                src="/musica2.svg"
-                style={{
-                  width: "20vw",
-                  marginLeft: "6rem",
-                  marginTop: "-1rem",
-                }}
-              />
-            </PageBook>
+            <p>
+              Listen to different music genres, from classical music to the last
+              Pop hits.
+            </p>
+            <img
+              src="/musica2.svg"
+              style={{
+                width: "55%",
+                marginLeft: "17%",
+                marginTop: "-10%",
+              }}
+            />
           </div>
           {/* PAGINA EM BRANCO*/}
-          <div className="demoPage">
-            <PageBook className="page-book"></PageBook>
-          </div>
+          {!isMobile ? <div className="demoPage" /> : <></>}
           {/* QUINTA PAGINA*/}
           <div className="demoPage">
-            <PageBook className="page-book">
-              <p>Make illustrations.</p>
-              <img
-                src="/lapis2.svg"
-                style={{
-                  width: "30vw",
-                  marginLeft: "2.2rem",
-                  marginTop: "-6.2rem",
-                }}
-              />
-            </PageBook>
+            <p>Make illustrations.</p>
+            <img
+              src="/lapis2.svg"
+              style={{
+                width: "85%",
+                marginTop: "-22%",
+                marginLeft: "5%",
+              }}
+            />
           </div>
           {/* PAGINA EM BRANCO*/}
-          <div className="demoPage">
-            <PageBook className="page-book"></PageBook>
-          </div>
+          {!isMobile ? <div className="demoPage" /> : <></>}
           {/* SEXTA PAGINA*/}
           <div className="demoPage">
-            <PageBook className="page-book">
-              <p>
-                And to learn new thinks , be creative and make a lot of
-                philosophical questions.
-              </p>
-              <img
-                src="/nuvem2.svg"
-                style={{
-                  width: "20vw",
-                  marginLeft: "10rem",
-                  marginTop: "-1rem",
-                }}
-              />
-            </PageBook>
+            <p>
+              And to learn new thinks , be creative and make a lot of
+              philosophical questions.
+            </p>
+            <img
+              src="/nuvem2.svg"
+              style={{
+                width: "70%",
+                marginLeft: "12%",
+                marginTop: "-24%",
+              }}
+            />
           </div>
           {/* PAGINA EM BRANCO*/}
-          <div className="demoPage">
-            <PageBook className="page-book"></PageBook>
-          </div>
+          <div className="demoPage" />
         </HTMLFlipBook>
       </div>
     </>
@@ -133,7 +121,6 @@ const Book = () => {
 };
 
 export const PageBook = styled.div`
-  border: 1.5px solid white;
   width: 100%;
   height: 100%;
   background: black;

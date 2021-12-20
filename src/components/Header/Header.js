@@ -42,7 +42,7 @@ const Header = () => {
             <p
               onClick={() => scrollTo("book")}
               data-blobity
-              data-blobity-radius="10"
+              data-blobity-radius="4"
               data-blobity-offset-x="0"
               data-blobity-offset-y="0"
               data-blobity-magnetic="false"
@@ -53,7 +53,7 @@ const Header = () => {
             <p
               onClick={() => scrollTo("projetos")}
               data-blobity
-              data-blobity-radius="10"
+              data-blobity-radius="4"
               data-blobity-offset-x="0"
               data-blobity-offset-y="0"
               data-blobity-magnetic="false"
@@ -64,7 +64,7 @@ const Header = () => {
             <p
               onClick={() => scrollTo("contacto")}
               data-blobity
-              data-blobity-radius="10"
+              data-blobity-radius="4"
               data-blobity-offset-x="0"
               data-blobity-offset-y="0"
               data-blobity-magnetic="false"
