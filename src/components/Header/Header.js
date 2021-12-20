@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./Header.css";
 import { MenuButton } from "./MenuButton.js";
 import { motion } from "framer-motion";
@@ -24,18 +24,54 @@ const Header = () => {
     };
   }, []);
 
+  const scrollTo = useCallback((classname) => {
+    document.getElementsByClassName(classname)[0].scrollIntoView({
+      behavior: "smooth",
+    });
+  }, []);
+
   return (
     <>
       <div className="header">
-        <div className="name">
+        <div className="name" onClick={() => scrollTo("main-view")}>
           <p className="fist-name">madalena</p>
           <p className="last-name">Roque</p>
         </div>
         {screenWidth >= 480 && (
           <div className="navbar">
-            <p>about</p>
-            <p>projects</p>
-            <p>media</p>
+            <p
+              onClick={() => scrollTo("book")}
+              data-blobity
+              data-blobity-radius="10"
+              data-blobity-offset-x="0"
+              data-blobity-offset-y="0"
+              data-blobity-magnetic="false"
+              style={{ padding: "0 0.5rem" }}
+            >
+              about
+            </p>
+            <p
+              onClick={() => scrollTo("projetos")}
+              data-blobity
+              data-blobity-radius="10"
+              data-blobity-offset-x="0"
+              data-blobity-offset-y="0"
+              data-blobity-magnetic="false"
+              style={{ padding: "0 0.5rem" }}
+            >
+              projects
+            </p>
+            <p
+              onClick={() => scrollTo("contacto")}
+              data-blobity
+              data-blobity-radius="10"
+              data-blobity-offset-x="0"
+              data-blobity-offset-y="0"
+              data-blobity-magnetic="false"
+              style={{ padding: "0 0.5rem" }}
+            >
+              media
+            </p>
           </div>
         )}
       </div>

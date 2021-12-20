@@ -1,0 +1,39 @@
+.contacto {
+  margin-bottom: 4rem;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.contacto > div > p {
+  margin: 0;
+  padding: 0;
+}
+
+.text {
+  position: absolute;
+  bottom: 20vh;
+  left: 1rem;
+}
+
+.face-container {
+}
+.face {
+  position: absolute;
+  right: 10vw;
+  width: 60px;
+  height: 60px;
+  bottom: 3vh;
+  border-radius: 50%;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.insta {
+  position: absolute;
+  right: 3vw;
+  width: 60px;
+  height: 60px;
+  bottom: 3vh;
+  cursor: pointer;
+}
