@@ -14,7 +14,7 @@ const Projects = () => {
 
   return (
     <div className="projetos">
-      <svg
+      {/*<svg
         width="445"
         height="494"
         viewBox="0 0 445 494"
@@ -31,21 +31,55 @@ const Projects = () => {
             pathLength,
           }}
         />
-      </svg>
-
+        </svg>*/}
+      <img className="path" src="./completo.svg" />
       {/*<img src="./1.svg" style={{ marginLeft: "3.6%" }} />*/}
-      <div>
-        <img src="./ellen-grid.svg" style={{ marginLeft: "10%" }} />
-        <p>ellen lupton</p>
+      <div
+        className="ellen"
+        onClick={() =>
+          window.open("https://ellen-exposition.netlify.app/", "_blank")
+        }
+      >
+        <img
+          src="./ellen-grid.svg"
+          onMouseOver={(e) => {
+            e.target.classList.add("foto_blur");
+            //document.getElementsByClassName("e").classList.add("foto_blur");
+          }}
+          onMouseLeave={(e) => e.target.classList.remove("foto_blur")}
+        />
+        <p className="e">ellen lupton</p>
       </div>
-      <img src="./2.svg" style={{ marginLeft: "30%" }} />
-      <div>
-        <img src="./trio.svg" style={{ marginLeft: "45%" }} />
+      {/*<img src="./2.svg" style={{ marginLeft: "30%" }} />*/}
+      <div
+        className="trio"
+        onClick={() => window.open("https://trio-mbe.netlify.app/", "_blank")}
+      >
+        <img
+          src="./trio.png"
+          onMouseOver={(e) => {
+            e.target.classList.add("foto_blur");
+            //document.getElementsByClassName("e").classList.add("foto_blur");
+          }}
+          onMouseLeave={(e) => e.target.classList.remove("foto_blur")}
+        />
         <p>trio</p>
       </div>
-      <img src="./3.svg" style={{ marginLeft: "15%" }} />
-      <div>
-        <img src="./ilustrações.svg" style={{ marginLeft: "10%" }} />
+      {/*<img src="./3.svg" style={{ marginLeft: "15%" }} />*/}
+      <div
+        className="ilustracao"
+        onClick={() =>
+          window.open("https://www.behance.net/madalenasilva1", "_blank")
+        }
+      >
+        <img
+          src="./ilustrações.png"
+          onMouseOver={(e) => {
+            e.target.classList.add("foto_blur");
+            //document.getElementsByClassName("e").classList.add("foto_blur");
+          }}
+          onMouseLeave={(e) => e.target.classList.remove("foto_blur")}
+        />
         <p>illustrations</p>
       </div>
     </div>

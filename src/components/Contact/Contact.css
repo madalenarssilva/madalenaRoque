@@ -14,6 +14,7 @@
   position: absolute;
   bottom: 20vh;
   left: 1rem;
+  top: 755vh;
 }
 
 .face-container {
@@ -23,7 +24,8 @@
   right: 10vw;
   width: 60px;
   height: 60px;
-  bottom: 3vh;
+  /*bottom: 3vh;*/
+  top: 810vh;
   border-radius: 50%;
   cursor: pointer;
   border-radius: 50%;
@@ -35,5 +37,6 @@
   width: 60px;
   height: 60px;
   bottom: 3vh;
+  top: 810vh;
   cursor: pointer;
 }

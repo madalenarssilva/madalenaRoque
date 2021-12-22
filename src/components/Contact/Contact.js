@@ -50,7 +50,7 @@ const Contact = () => {
           info?
         </p>
       </motion.div>
-      <svg
+      {/*<svg
         width="445"
         height="494"
         viewBox="0 0 445 494"
@@ -69,7 +69,7 @@ const Contact = () => {
             marginLeft: "10%",
           }}
         />
-      </svg>
+        </svg>*/}
       <SiFacebook
         data-blobity
         data-blobity-radius="30"
