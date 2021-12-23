@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import "./Header.css";
 import { MenuButton } from "./MenuButton.js";
 import { motion } from "framer-motion";
+import { MdArrowCircleUp } from "react-icons/md";
 
 const Header = () => {
   const [isOpen, setOpen] = React.useState(false);
@@ -33,82 +34,70 @@ const Header = () => {
   return (
     <>
       <div className="header">
-        <div className="name" onClick={() => scrollTo("main-view")}>
-          <p className="fist-name">madalena</p>
-          <p className="last-name">Roque</p>
-        </div>
         {screenWidth >= 480 && (
-          <div className="navbar">
-            <p
-              onClick={() => scrollTo("book")}
-              data-blobity
-              data-blobity-radius="4"
-              data-blobity-offset-x="0"
-              data-blobity-offset-y="0"
-              data-blobity-magnetic="false"
-              style={{ padding: "0 0.5rem" }}
-            >
-              about
-            </p>
-            <p
-              onClick={() => scrollTo("projetos")}
-              data-blobity
-              data-blobity-radius="4"
-              data-blobity-offset-x="0"
-              data-blobity-offset-y="0"
-              data-blobity-magnetic="false"
-              style={{ padding: "0 0.5rem" }}
-            >
-              projects
-            </p>
-            <p
-              onClick={() => scrollTo("contacto")}
-              data-blobity
-              data-blobity-radius="4"
-              data-blobity-offset-x="0"
-              data-blobity-offset-y="0"
-              data-blobity-magnetic="false"
-              style={{ padding: "0 0.5rem" }}
-            >
-              media
-            </p>
+          <div className="name" onClick={() => scrollTo("main-view")}>
+            <p className="fist-name">madalena</p>
+            <p className="last-name">Roque</p>
           </div>
         )}
+        <div className="navbar">
+          <p
+            onClick={() => scrollTo("book")}
+            data-blobity
+            data-blobity-radius="4"
+            data-blobity-offset-x="0"
+            data-blobity-offset-y="0"
+            data-blobity-magnetic="false"
+            style={{ padding: "0 0.5rem" }}
+          >
+            about
+          </p>
+          <p
+            onClick={() => scrollTo("projetos")}
+            data-blobity
+            data-blobity-radius="4"
+            data-blobity-offset-x="0"
+            data-blobity-offset-y="0"
+            data-blobity-magnetic="false"
+            style={{ padding: "0 0.5rem" }}
+          >
+            projects
+          </p>
+          <p
+            onClick={() => scrollTo("contacto")}
+            data-blobity
+            data-blobity-radius="4"
+            data-blobity-offset-x="0"
+            data-blobity-offset-y="0"
+            data-blobity-magnetic="false"
+            style={{ padding: "0 0.5rem" }}
+          >
+            media
+          </p>
+        </div>
       </div>
-      <MenuButton
-        className="hamburguer"
-        isOpen={isOpen}
-        onClick={() => {
-          setOpen(!isOpen);
+
+      <img
+        data-blobity
+        data-blobity-radius="26"
+        data-blobity-offset-x="0"
+        data-blobity-offset-y="0"
+        data-blobity-magnetic="true"
+        src="./seta.svg"
+        onClick={() => scrollTo("main-view")}
+        style={{
+          position: "fixed",
+          bottom: 0,
+          right: 0,
+          margin: "2rem",
+          width: 50,
+          height: 50,
+          zIndex: 1000,
+          cursor: "pointer",
         }}
-        strokeWidth="4"
-        color="var(--textColor)"
-        lineProps={{ strokeLinecap: "round" }}
-        transition={{ type: "spring", stiffness: 260, damping: 20 }}
-        width="24"
-        height="24"
       />
-      {isOpen && screenWidth <= 480 && (
-        <motion.div
-          className="navbar"
-          initial={{
-            translateX: "-5vw",
-          }}
-          animate={{
-            translateX: 0,
-          }}
-          transition={{
-            type: "spring",
-            duration: 1,
-          }}
-        >
-          <p>about</p>
-          <p>projects</p>
-          <p>media</p>
-        </motion.div>
-      )}
     </>
   );
 };
 
-export default Header;
+export default React.memo(Header);

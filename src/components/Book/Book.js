@@ -1,20 +1,38 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect, useRef } from "react";
 import "./Book.css";
 import styled from "styled-components";
 import HTMLFlipBook from "react-pageflip";
 import { convertRemToPixels, DESKTOP_PAGE } from "../../utils";
 
+import { useInView } from "react-intersection-observer";
+
 const Book = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.9,
+    trackVisibility: true,
+    delay: 1000,
+  });
+  const bookRef = useRef(null);
+
   const isMobile = useMemo(
     () => window.innerWidth <= DESKTOP_PAGE.width * 2,
     []
   );
 
+  useEffect(() => {
+    if (inView && bookRef.current) {
+      const pageFlip = bookRef.current.pageFlip();
+      if (!pageFlip.getCurrentPageIndex()) pageFlip.flipNext();
+    }
+  }, [inView, ref]);
+
   return (
     <>
-      <div className="book">
+      <div ref={ref} className="book">
         <HTMLFlipBook
-          className={isMobile && "flip-book"}
+          ref={bookRef}
+          className={isMobile ? "flip-book" : undefined}
           width={
             isMobile
               ? window.innerWidth - convertRemToPixels(2)
