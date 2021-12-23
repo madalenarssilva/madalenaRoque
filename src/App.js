@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div ref={ref} className="App">
-      <Hero />
+      <Hero blobity />
       <Book />
       <Projects scrollYProgress={scrollYProgress} />
     </div>

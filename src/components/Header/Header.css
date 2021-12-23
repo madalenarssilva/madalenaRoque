@@ -40,7 +40,7 @@
   font-family: Bely Regular;
 }
 
-/* Extra small devices (phones, 600px and down) */
+/* Extra small devices (phones) */
 @media only screen and (max-width: 480px) {
   .header {
     align-items: center;

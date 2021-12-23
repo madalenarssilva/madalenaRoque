@@ -8,9 +8,13 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Projects = ({ scrollYProgress }) => {
   const yRange = useTransform(scrollYProgress, [0.15, 1], [0, 1]);
+  const { ref, inView } = useInView({
+    threshold: 0.9,
+  });
 
   useEffect(() => {
     yRange.onChange((v) => console.log("yRange: ", v));
@@ -120,64 +124,89 @@ const Projects = ({ scrollYProgress }) => {
         <p className="i">illustrations</p>
       </div>
       {/* CONTACTO */}
-      <div className="contacto">
-        <motion.div
-          className="text"
-          initial={{
-            translateX: "-50vw",
-            translateY: "3001px",
-          }}
-          animate={{
-            scale: [0.5, 1],
-            translateX: 0,
-            translateY: 0,
-          }}
-          transition={{
-            type: "spring",
-            duration: 1.5,
-          }}
-        >
-          <p
-            style={{
-              fontFamily: "Bely BoldV",
-              fontSize: "10rem",
-              marginBottom: "-7rem",
+      <div className="contacto" ref={ref}>
+        {inView && (
+          <motion.div
+            className="text"
+            initial={{
+              translateX: "-50vw",
+              translateY: "3001px",
+            }}
+            animate={{
+              scale: [0.5, 1],
+              translateX: 0,
+              translateY: 0,
+            }}
+            transition={{
+              type: "spring",
+              duration: 1.5,
             }}
           >
-            More
-          </p>
-          <p
-            style={{
-              fontFamily: "Bely Regular",
-              fontSize: "10rem",
-              marginLeft: "15rem",
+            <p
+              className="m"
+              style={{
+                fontFamily: "Bely BoldV",
+                fontSize: "10rem",
+                marginBottom: "-7rem",
+              }}
+            >
+              More
+            </p>
+            <p
+              className="i"
+              style={{
+                fontFamily: "Bely Regular",
+                fontSize: "10rem",
+                marginLeft: "15rem",
+              }}
+            >
+              info?
+            </p>
+          </motion.div>
+        )}
+        {inView && (
+          <motion.div
+            initial={{
+              translateX: "50vw",
+            }}
+            animate={{
+              translateX: 0,
+            }}
+            transition={{
+              type: "spring",
+              duration: 1.5,
             }}
           >
-            info?
-          </p>
-        </motion.div>
-        <SiFacebook
-          data-blobity
-          data-blobity-radius="30"
-          data-blobity-offset-x="0"
-          data-blobity-offset-y="0"
-          data-blobity-magnetic="false"
-          className="face"
-          onClick={() =>
-            window.open("https://www.facebook.com/madalenarssilva", "_blank")
-          }
-        />
-        <SiInstagram
-          data-blobity
-          data-blobity-radius="20"
-          data-blobity-offset-x="0"
-          data-blobity-offset-y="0"
-          data-blobity-magnetic="false"
-          className="insta"
-          onClick={() =>
-            window.open("https://www.instagram.com/madalenarssilva/", "_blank")
-          }
-        />
+            <SiFacebook
+              data-blobity
+              data-blobity-radius="30"
+              data-blobity-offset-x="0"
+              data-blobity-offset-y="0"
+              data-blobity-magnetic="true"
+              className="face"
+              onClick={() =>
+                window.open(
+                  "https://www.facebook.com/madalenarssilva",
+                  "_blank"
+                )
+              }
+            />
+            <SiInstagram
+              data-blobity
+              data-blobity-radius="20"
+              data-blobity-offset-x="0"
+              data-blobity-offset-y="0"
+              data-blobity-magnetic="true"
+              className="insta"
+              onClick={() =>
+                window.open(
+                  "https://www.instagram.com/madalenarssilva/",
+                  "_blank"
+                )
+              }
+            />
+          </motion.div>
+        )}
       </div>
     </div>
   );

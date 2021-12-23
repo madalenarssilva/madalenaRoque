@@ -3,25 +3,41 @@
   width: 100%;
 }
 
-.mada-design {
-  position: absolute;
-  width: 50%;
-  top: 15%;
-  left: 50%;
-  transform: translate(-50%, 0);
+.livro-fechado {
+  min-width: 55vw;
+  max-width: 60vw;
+  transform: translate(-50%, 5%);
+  transition: all 3s ease-out;
 }
 
+.hero-image {
+  position: absolute;
+  min-width: 55vw;
+  max-width: 60vw;
+  transform: translate(-50%, 5%);
+}
+
+.mada-design {
+  position: absolute;
+  max-width: 160vw;
+  transform: translate(-50%, 5%);
+}
+
+.hero-animation {
+  animation: MoveUpDown 3s linear infinite;
+}
+/*
 .lapis {
   position: absolute;
-  width: 15%;
-  left: 27%;
-  top: 5%;
+  max-width: 190px;
+  left: 25.8%;
+  top: 6.9%;
 }
 
 .musica {
   position: absolute;
-  width: 20%;
-  left: 20.4%;
+  max-width: 260px;
+  left: 19.2%;
   top: 5%;
   transform: translate(0, 117%);
 }
@@ -47,4 +63,22 @@
   right: 21.4%;
   top: 5%;
   transform: translate(0, 220%);
+}*/
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+  .hero-image {
+    top: 5vh;
+    max-width: 80vw;
+    min-width: 70vw;
+  }
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    top: 5%;
+  }
+  50% {
+    top: 2vh;
+  }
 }

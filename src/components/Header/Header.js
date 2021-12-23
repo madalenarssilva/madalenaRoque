@@ -47,7 +47,7 @@ const Header = () => {
             data-blobity-radius="4"
             data-blobity-offset-x="0"
             data-blobity-offset-y="0"
-            data-blobity-magnetic="false"
+            data-blobity-magnetic="true"
             style={{ padding: "0 0.5rem" }}
           >
             about
@@ -58,7 +58,7 @@ const Header = () => {
             data-blobity-radius="4"
             data-blobity-offset-x="0"
             data-blobity-offset-y="0"
-            data-blobity-magnetic="false"
+            data-blobity-magnetic="true"
             style={{ padding: "0 0.5rem" }}
           >
             projects
@@ -69,7 +69,7 @@ const Header = () => {
             data-blobity-radius="4"
             data-blobity-offset-x="0"
             data-blobity-offset-y="0"
-            data-blobity-magnetic="false"
+            data-blobity-magnetic="true"
             style={{ padding: "0 0.5rem" }}
           >
             media
