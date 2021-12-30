@@ -29,7 +29,7 @@ const Book = () => {
 
   return (
     <>
-      <div ref={ref} className="book">
+      <div ref={ref} style={{ zIndex: 1000 }} className="book">
         <HTMLFlipBook
           ref={bookRef}
           className={isMobile ? "flip-book" : undefined}
@@ -58,7 +58,7 @@ const Book = () => {
           {/* SEGUNDA PAGINA*/}
           <div className="demoPage">
             <p>
-              I love coding, building new interactive websites and platforms.{" "}
+              I love coding, building new interactive websites and platforms.
             </p>
             <img
               src="/pc.svg"
@@ -130,8 +130,6 @@ const Book = () => {
               }}
             />
           </div>
-          {/* PAGINA EM BRANCO*/}
-          <div className="demoPage" />
         </HTMLFlipBook>
       </div>
     </>

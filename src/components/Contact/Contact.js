@@ -35,7 +35,6 @@ const Contact = () => {
           style={{
             fontFamily: "Bely BoldV",
             fontSize: "10rem",
-            marginBottom: "-7rem",
           }}
         >
           More
@@ -44,7 +43,6 @@ const Contact = () => {
           style={{
             fontFamily: "Bely Regular",
             fontSize: "10rem",
-            marginLeft: "15rem",
           }}
         >
           info?

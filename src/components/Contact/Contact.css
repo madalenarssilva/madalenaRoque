@@ -11,60 +11,43 @@
 .text {
   position: absolute;
   left: 1rem;
+  bottom: 170px;
+  max-width: 100%;
+}
+
+.media {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
   bottom: 120px;
-}
-
-.m {
-  font-family: "Bely BoldV";
-  font-size: "10rem";
-  margin-bottom: "-7rem";
-}
-
-.i {
-  font-family: "Bely Regular";
-  font-size: "10rem";
-  margin-left: "15rem";
+  right: 2rem;
+  height: 60px;
+  width: calc(120px + 2rem);
 }
 
 .face {
-  position: absolute;
-  right: 10vw;
-  width: 60px;
   height: 60px;
-  border-radius: 50%;
+  width: 60px;
   cursor: pointer;
   border-radius: 50%;
-  bottom: 120px;
 }
 
 .insta {
-  position: absolute;
-  right: 3vw;
   width: 60px;
   height: 60px;
   cursor: pointer;
-  bottom: 120px;
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 480px) {
-  .face {
-    width: 40px;
-    height: 40px;
-    right: 25vw;
-  }
-
-  .insta {
-    width: 40px;
-    height: 40px;
-    right: 10vw;
-  }
-
   .m {
-    font-size: 4.5rem;
+    font-size: 6rem !important;
+    margin-bottom: -1rem !important;
   }
 
   .i {
-    font-size: 4rem;
+    font-size: 6rem !important;
+    margin-left: 20% !important;
+    margin-bottom: 5rem !important;
   }
 }

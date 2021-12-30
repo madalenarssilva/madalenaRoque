@@ -92,9 +92,10 @@ const Header = () => {
           margin: "2rem",
           width: 50,
           height: 50,
-          zIndex: 1000,
+          zIndex: 1001,
           cursor: "pointer",
         }}
+        alt="seta"
       />
     </>
   );

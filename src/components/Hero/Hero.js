@@ -3,8 +3,8 @@ import Header from "../Header/Header";
 import "./Hero.css";
 import "../../App";
 
-const Hero = (blobity) => {
-  const [mainViewHeight, setMainViewHeight] = useState("100vh");
+const Hero = ({ blobity }) => {
+  const [mainViewHeight, setMainViewHeight] = useState("1000vh");
   const [nuvemTopY, setNuvemTopY] = useState(null);
   const [livroBottomY, setLivroBottomY] = useState(null);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -54,16 +54,20 @@ const Hero = (blobity) => {
             setNuvemTopY(e.target.getBoundingClientRect().top);
             setLivroBottomY(e.target.getBoundingClientRect().bottom);
           }}
-          onMouseOver={(e) => {
+          onMouseEnter={(e) => {
             e.target.classList.add("hero-animation");
-            /*blobity.updateOptions({ size: "60" });*/
+            if (blobity?.current) {
+              blobity.current.updateOptions({ size: 120, radius: 1 });
+            }
           }}
           onMouseLeave={(e) => {
             e.target.classList.remove("hero-animation");
+            if (blobity?.current) blobity.current.updateOptions({ size: 40 });
           }}
           onClick={(e) => {
             scrollTo("book");
           }}
+          alt="hero"
         ></img>
       )}
       {screenWidth < 480 && (
@@ -78,6 +82,7 @@ const Hero = (blobity) => {
           onClick={(e) => {
             scrollTo("book");
           }}
+          alt="mobile-hero"
         />
       )}
     </div>
