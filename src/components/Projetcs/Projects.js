@@ -22,10 +22,6 @@ const Projects = () => {
   });
 
   useEffect(() => {
-    yRange.onChange((v) => console.log("yRange: ", v));
-  }, [yRange]);
-
-  useEffect(() => {
     //yRange.onChange((v) => console.log("yRange: ", v));
 
     const changeWidth = () => {
@@ -82,8 +78,6 @@ const Projects = () => {
           />
         </svg>
       )}
-      {/* <img className="path" src="./completo.svg" /> */}
-      {/*<img src="./1.svg" style={{ marginLeft: "3.6%" }} />*/}
       <div
         className="ellen"
         onClick={() =>
@@ -91,7 +85,8 @@ const Projects = () => {
         }
       >
         <img
-          src="./ellen-grid.svg"
+          className="ellen-image"
+          src="./ellenGridRedimensao.svg"
           onMouseOver={(e) => {
             e.target.classList.add("foto_blur");
             document.getElementsByClassName("e")[0].classList.add("foto_blur");
@@ -106,19 +101,16 @@ const Projects = () => {
         />
         <p className="e">ellen lupton</p>
       </div>
-      {/*<img src="./2.svg" style={{ marginLeft: "30%" }} />*/}
       <div
         className="trio"
         onClick={() => window.open("https://trio-mbe.netlify.app/", "_blank")}
       >
         <img
-          src="./trio.png"
-          style={{ width: "550px" }}
+          src="./trioRedimensao.svg"
+          className="trio-image"
           onMouseOver={(e) => {
             e.target.classList.add("foto_blur");
             document.getElementsByClassName("t")[0].classList.add("foto_blur");
-
-            //document.getElementsByClassName("e").classList.add("foto_blur");
           }}
           onMouseLeave={(e) => {
             e.target.classList.remove("foto_blur");
@@ -130,7 +122,6 @@ const Projects = () => {
         />
         <p className="t">trio</p>
       </div>
-      {/*<img src="./3.svg" style={{ marginLeft: "15%" }} />*/}
       <div
         className="ilustracao"
         onClick={() =>
@@ -138,22 +129,20 @@ const Projects = () => {
         }
       >
         <img
-          src="./ilustrações.png"
+          src="./ilustracaoRedimensao.svg"
           onMouseOver={(e) => {
             e.target.classList.add("foto_blur");
-            document.getElementsByClassName("i")[0].classList.add("foto_blur");
-
-            //document.getElementsByClassName("e").classList.add("foto_blur");
+            document.getElementsByClassName("il")[0].classList.add("foto_blur");
           }}
           onMouseLeave={(e) => {
             e.target.classList.remove("foto_blur");
             document
-              .getElementsByClassName("i")[0]
+              .getElementsByClassName("il")[0]
               .classList.remove("foto_blur");
           }}
           alt="ilustrações"
         />
-        <p className="i">illustrations</p>
+        <p className="il">illustrations</p>
       </div>
       {/* CONTACTO */}
       <div className="contacto" ref={ref}>

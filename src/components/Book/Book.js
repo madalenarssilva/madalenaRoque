@@ -29,7 +29,7 @@ const Book = () => {
 
   return (
     <>
-      <div ref={ref} style={{ zIndex: 1000 }} className="book">
+      <div ref={ref} className="book">
         <HTMLFlipBook
           ref={bookRef}
           className={isMobile ? "flip-book" : undefined}
