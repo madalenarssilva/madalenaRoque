@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./Header.css";
-import { MenuButton } from "./MenuButton.js";
 import { motion } from "framer-motion";
 import { MdArrowCircleUp } from "react-icons/md";
 
