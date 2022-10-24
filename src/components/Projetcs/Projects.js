@@ -160,7 +160,7 @@ const Projects = () => {
       </div>
       <div
         className="trio"
-        onClick={() => window.open("https://trio-mbe.netlify.app/", "_blank")}
+        onClick={() => window.open("https://trio-mbi.netlify.app/", "_blank")}
       >
         <img
           src="./trioRedimensao.svg"
